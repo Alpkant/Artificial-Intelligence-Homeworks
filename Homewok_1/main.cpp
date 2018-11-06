@@ -73,7 +73,7 @@ Node DFS(Node &root_of_tree) {
 
 // Heuristic 1 is heuristic 1 which is number of pegs that have any move
 
-Node A_star(Node &root_of_tree, int heuristic) {
+Node A_star(Node &root_of_tree) {
     priority_queue<Node> frontier;
     frontier.push(root_of_tree);
     while (!frontier.empty()) {
@@ -124,13 +124,13 @@ int main(int argc, char **argv) {
         // Create node with heuristic
         root_of_tree.initial_node(1);
         tStart = clock();
-        solution = A_star(root_of_tree, 1);
+        solution = A_star(root_of_tree);
 
     } else if (!strcmp(argv[1], "astar2")) {
 
         root_of_tree.initial_node(2);
         tStart = clock();
-        solution = A_star(root_of_tree, 2);
+        solution = A_star(root_of_tree);
 
     } else {
         cerr << "You have given wrong argument." << endl;
